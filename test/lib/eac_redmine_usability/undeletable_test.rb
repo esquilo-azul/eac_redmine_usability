@@ -4,9 +4,9 @@ require 'test_helper'
 
 module EacRedmineUsability
   class UndeletableTest < ActiveSupport::TestCase
-    fixtures :issues, :issue_statuses, :users, :wikis, :wiki_pages
+    fixtures :issues, :issue_statuses, :projects, :users, :wikis, :wiki_pages
 
-    [::Issue, ::User, ::Wiki, ::WikiPage].each do |klass|
+    [::Issue, ::Project, ::User, ::Wiki, ::WikiPage].each do |klass|
       test "#{klass.name.humanize.downcase} cannot be deleted" do
         cannot_be_deleted_test(klass)
       end
