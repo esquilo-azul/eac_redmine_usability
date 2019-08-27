@@ -6,7 +6,8 @@ namespace :eac_redmine_usability do
 
     t.description = 'Run plugin eac_redmine_usability\'s tests.'
     t.libs << 'test'
-    t.test_files = ["#{plugin_root}/test/**/*_test.rb"]
-    t.verbose = true
+    t.test_files = FileList["#{plugin_root}/test/**/*_test.rb"]
+    t.verbose = false
+    t.warning = false
   end
 end
