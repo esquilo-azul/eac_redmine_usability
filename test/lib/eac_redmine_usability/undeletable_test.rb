@@ -8,7 +8,9 @@ module EacRedmineUsability
 
     [::Issue, ::Project, ::User, ::Wiki, ::WikiPage].each do |klass|
       test "#{klass.name.humanize.downcase} cannot be deleted" do
-        cannot_be_deleted_test(klass)
+        ::EacRedmineUsability::Undeletable.on_allow_destroy(false) do
+          cannot_be_deleted_test(klass)
+        end
       end
     end
 
