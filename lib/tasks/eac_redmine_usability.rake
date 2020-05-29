@@ -10,4 +10,12 @@ namespace :eac_redmine_usability do
     t.verbose = false
     t.warning = false
   end
+
+  desc 'Close projects no longer used.'
+  task :close_unused_projects, %i[expire_days confirm] => :environment do |_t, args|
+    ::EacRedmineUsability::CloseUnusedProjects.new(
+      args.expire_days.to_i,
+      args.confirm.present?
+    ).run
+  end
 end
