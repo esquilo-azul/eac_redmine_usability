@@ -19,7 +19,6 @@ module EacRedmineUsability
 end
 
 if ::Rails.env.test?
-  require Rails.root.join('test', 'test_helper.rb')
   patch = ::EacRedmineUsability::Patches::TestCase
   target = ::ActiveSupport::TestCase
   target.send(:include, patch) unless target.included_modules.include?(patch)
