@@ -57,7 +57,7 @@ module EacRedmineUsability
       def self_last_update_by_events
         ::Redmine::Activity::Fetcher.new(
           parent.to_fetch_activity_user, project: project, with_subprojects: false
-        ).events.first.try(:created_on)
+        ).events(nil, nil, limit: 1).first.try(:event_datetime)
       end
 
       def subprojects_uncached
