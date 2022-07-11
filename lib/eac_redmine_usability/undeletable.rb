@@ -25,11 +25,12 @@ module EacRedmineUsability
 
     module InstanceMethods
       def block_destroy
-        return true if ::EacRedmineUsability::Undeletable.allow_destroy
+        return if ::EacRedmineUsability::Undeletable.allow_destroy
 
         errors.add :base, 'Este registro não pode ser removido. Em vez disso tente associá-lo a ' \
           'um status como "Rejeitado" ou "Depreciado".'
-        false
+
+        throw(:abort)
       end
     end
   end
