@@ -16,7 +16,7 @@ module EacRedmineUsability
 
     private
 
-    def cannot_be_deleted_test(klass)
+    def cannot_be_deleted_test(klass) # rubocop:disable Metrics/AbcSize
       record = klass.first
       assert record.is_a?(klass), 'Nenhum registro encontrado - provável ausência do fixture '\
         "\":#{klass.name.underscore.pluralize}."
