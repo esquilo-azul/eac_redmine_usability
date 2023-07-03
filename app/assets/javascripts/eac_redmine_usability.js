@@ -1,0 +1,1 @@
+//= require eac_redmine_usability/issue_done_ratio_alternative_input
