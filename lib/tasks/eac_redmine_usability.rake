@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-require 'redmine_plugins_helper/plugin_rake_task'
-::RedminePluginsHelper::PluginRakeTask.register(:eac_redmine_usability, :test)
+require 'redmine_plugins_helper/test_tasks/auto'
+RedminePluginsHelper::TestTasks::Auto.register(:eac_redmine_usability)
 
 namespace :eac_redmine_usability do
   desc 'Close projects no longer used.'
