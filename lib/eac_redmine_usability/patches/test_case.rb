@@ -18,8 +18,8 @@ module EacRedmineUsability
   end
 end
 
-if ::Rails.env.test?
-  patch = ::EacRedmineUsability::Patches::TestCase
-  target = ::ActiveSupport::TestCase
+if Rails.env.test?
+  patch = EacRedmineUsability::Patches::TestCase
+  target = ActiveSupport::TestCase
   target.send(:include, patch) unless target.included_modules.include?(patch)
 end

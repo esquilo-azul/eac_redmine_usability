@@ -1,13 +1,13 @@
 # frozen_string_literal: true
 
-::RSpec.describe ::EacRedmineUsability::Undeletable do
+RSpec.describe EacRedmineUsability::Undeletable do
   fixtures :issues, :issue_statuses, :projects, :users, :wikis, :wiki_pages
 
   around do |example|
     described_class.on_allow_destroy(false, &example)
   end
 
-  [::Issue, ::Project, ::User, ::Wiki, ::WikiPage].each do |model|
+  [Issue, Project, User, Wiki, WikiPage].each do |model|
     context "when model is #{model}" do
       let(:record) { model.first }
 

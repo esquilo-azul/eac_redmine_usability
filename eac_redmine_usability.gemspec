@@ -6,12 +6,13 @@ require 'eac_redmine_usability/version'
 
 # Describe your gem and declare its dependencies:
 Gem::Specification.new do |s|
-  s.name        = ::EacRedmineUsability::SLUG
-  s.version     = ::EacRedmineUsability::VERSION
-  s.authors     = [::EacRedmineUsability::AUTHOR]
-  s.summary     = ::EacRedmineUsability::SUMMARY
+  s.name        = EacRedmineUsability::SLUG
+  s.version     = EacRedmineUsability::VERSION
+  s.authors     = [EacRedmineUsability::AUTHOR]
+  s.summary     = EacRedmineUsability::SUMMARY
 
   s.files = Dir['{app,config,db,lib}/**/*', 'init.rb']
+  s.required_ruby_version = '>= 2.7'
 
   s.add_dependency 'eac_ruby_utils', '~> 0.128', '>= 0.128.3'
 

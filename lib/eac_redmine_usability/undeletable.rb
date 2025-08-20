@@ -28,7 +28,7 @@ module EacRedmineUsability
         return if ::EacRedmineUsability::Undeletable.allow_destroy
 
         errors.add :base, 'Este registro não pode ser removido. Em vez disso tente associá-lo a ' \
-          'um status como "Rejeitado" ou "Depreciado".'
+                          'um status como "Rejeitado" ou "Depreciado".'
 
         throw(:abort)
       end

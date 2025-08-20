@@ -6,9 +6,9 @@ module EacRedmineUsability
       attr_accessor :output_buffer
 
       ORIGINAL_INPUT_ID = 'issue_done_ratio'
-      ALTERNATIVE_INPUT_ID = ORIGINAL_INPUT_ID + '_alternative'
-      CHANGER_CONTROL_ID = ORIGINAL_INPUT_ID + '_changer'
-      HIDDEN_CONTENT_ID = ORIGINAL_INPUT_ID + '_hidden_content'
+      ALTERNATIVE_INPUT_ID = "#{ORIGINAL_INPUT_ID}_alternative"
+      CHANGER_CONTROL_ID = "#{ORIGINAL_INPUT_ID}_changer"
+      HIDDEN_CONTENT_ID = "#{ORIGINAL_INPUT_ID}_hidden_content"
       ELEMENTS_IDS = [ORIGINAL_INPUT_ID, ALTERNATIVE_INPUT_ID, CHANGER_CONTROL_ID,
                       HIDDEN_CONTENT_ID].freeze
 
@@ -25,8 +25,8 @@ module EacRedmineUsability
 
       # return [ActiveSupport::SafeBuffer]
       def alternative_input(issue)
-        tag(:input, id: ALTERNATIVE_INPUT_ID, type: 'number', value: issue.done_ratio,
-                    min: MINIMUM_VALUE, max: MAXIMUM_VALUE)
+        tag.input(id: ALTERNATIVE_INPUT_ID, type: 'number', value: issue.done_ratio,
+                  min: MINIMUM_VALUE, max: MAXIMUM_VALUE)
       end
 
       # return [ActiveSupport::SafeBuffer]
