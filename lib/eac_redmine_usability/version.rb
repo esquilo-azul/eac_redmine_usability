@@ -6,4 +6,7 @@ module EacRedmineUsability
   VERSION = '0.4.2'
   AUTHOR = 'Eduardo Henrique Bogoni'
   SUMMARY = ''
+
+  module Version
+  end
 end
